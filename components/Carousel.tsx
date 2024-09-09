@@ -60,7 +60,7 @@ const sliderTransition = {
 
 const App = () => {
   const [[imageCount, direction], setImageCount] = useState([0, 0]);
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const activeImageIndex = wrap(0, Model.length, imageCount);
 
   const swipeToImage = (swipeDirection: number) => {
@@ -85,7 +85,7 @@ const App = () => {
   return (
     <>
       <div className="flex flex-wrap items-center my-8 w-full justify-center">
-        <section className="w-full md:w-fit">
+        <section className="w-full md:w-fit pr-12 lg:pr-0">
           <div className="relative w-full md:w-[800px] h-[300px] md:h-[500px]">
             <button
               className="absolute -right-12 w-24 h-24 bg-red-100 rounded-full z-10"
@@ -165,28 +165,36 @@ const App = () => {
           <button
             className="btn btn-primary mt-4"
             onClick={() => {
+              setIsModalOpen(true);
               const modal = document?.getElementById(
                 "my_modal_1"
-              ) as HTMLDialogElement;
-              modal?.showModal();
+              ) as HTMLDialogElement | null;
+              if (modal) {
+                modal.showModal();
+                modal.onclose = () => {
+                  setIsModalOpen(false);
+                };
+              }
             }}
           >
             View 3D Render
           </button>
           <dialog id="my_modal_1" className="modal">
-            <div className="modal-box">
-              <h3 className="font-bold text-lg">View 3D Door Model!</h3>
-              <p className="py-4">
-                Press ESC key or click the button below to close
-              </p>
-              <BoxCanvas />
-              <div className="modal-action">
-                <form method="dialog">
-                  {/* if there is a button in form, it will close the modal */}
-                  <button className="btn">Close</button>
-                </form>
+            {isModalOpen && (
+              <div className="modal-box">
+                <h3 className="font-bold text-lg">View 3D Door Model!</h3>
+                <p className="py-4">
+                  Press ESC key or click the button below to close
+                </p>
+                <BoxCanvas />
+                <div className="modal-action">
+                  <form method="dialog">
+                    {/* if there is a button in form, it will close the modal */}
+                    <button className="btn">Close</button>
+                  </form>
+                </div>
               </div>
-            </div>
+            )}
           </dialog>
         </section>
       </div>
