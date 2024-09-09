@@ -85,7 +85,7 @@ const App = () => {
     <>
       <div className="flex flex-wrap gap-8 items-center my-8 w-full justify-center">
         <section>
-          <div className="relative w-full md:w-[800px] h-[300px] md:h-[500px] overflow-hidden">
+          <div className="relative w-[800px] h-[300px] md:h-[500px] overflow-hidden">
             <AnimatePresence initial={false} custom={direction}>
               <motion.div
                 key={imageCount}
@@ -154,7 +154,7 @@ const App = () => {
       {/* product information */}
       <section className="bg-gray-50 w-full py-24">
         <div className="container mx-auto flex flex-wrap py-12">
-          <div className="p-8 w-full lg:w-1/2 flex items-center">
+          <div className="p-8 w-full lg:w-1/2 flex flex-col sm:flex-row gap-y-4 items-center">
             <div>
               <h2 className="text-2xl font-bold">
                 Thông tin sản phẩm cửa thép
@@ -215,7 +215,7 @@ const App = () => {
       {/* so sánh cửa thép với cửa gỗ */}
 
       {/* so sánh */}
-      <div className="overflow-x-auto mx-auto container max-w-lg my-24">
+      <div className="mx-auto container max-w-lg my-24 px-4 md:px-0">
         <h2 className="text-2xl font-bold text-center">So sánh với đối thủ</h2>
         <p className="my-4">So sánh tổng thể các tính năng của từng loại cửa</p>
         <p>
@@ -224,7 +224,7 @@ const App = () => {
           obcaecati molestias numquam! Incidunt omnis ratione adipisci tenetur
           vero sequi blanditiis?
         </p>
-        <table className="table mt-12">
+        <table className="table mt-12 overflow-x-auto ">
           {/* head */}
           <thead>
             <tr>
@@ -269,7 +269,7 @@ const App = () => {
       {/* danh sách bài viết */}
       <section className="bg-white w-full py-24 flex flex-col items-center gap-y-4">
         <h2 className="text-2xl font-bold text-center">Danh sách bài viết</h2>
-        <div className="flex flex-col gap-y-4">
+        <div className="flex flex-col gap-y-4 px-4 md:px-0">
           <a className="link link-primary">
             Ưu Điểm Nổi Bật của Cửa Thép So Với Cửa Gỗ Truyền Thống
           </a>
