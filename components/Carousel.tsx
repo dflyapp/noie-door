@@ -229,17 +229,17 @@ const App = () => {
               <tbody>
                 {/* row 1 */}
                 <tr>
-                  <td>Cy Ganderton</td>
-                  <td>Quality Control Specialist</td>
+                  <td>Kích thước</td>
+                  <td>220 cm x 100 cm</td>
                 </tr>
                 {/* row 2 */}
                 <tr>
-                  <td>Hart Hagerty</td>
-                  <td>Desktop Support Technician</td>
+                  <td>Bề dày</td>
+                  <td>67 cm</td>
                 </tr>
                 <tr>
-                  <td>Hart Hagerty</td>
-                  <td>Desktop Support Technician</td>
+                  <td>Chất liệu</td>
+                  <td>Thép phủ sơn tĩnh điện</td>
                 </tr>
                 <tr>
                   <td>Hart Hagerty</td>
@@ -268,8 +268,10 @@ const App = () => {
       {/* so sánh */}
       <div className="mx-auto container max-w-lg my-24 px-4 md:px-0">
         <h2 className="text-2xl font-bold text-center">So sánh với đối thủ</h2>
-        <p className="my-4">So sánh tổng thể các tính năng của từng loại cửa</p>
-        <p>
+        <h6 className="my-4">
+          So sánh tổng thể các tính năng của từng loại cửa
+        </h6>
+        <p className="px-4 md:px-0">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, nihil
           hic, cum ipsam deserunt laborum repellat harum debitis mollitia,
           obcaecati molestias numquam! Incidunt omnis ratione adipisci tenetur
@@ -290,21 +292,21 @@ const App = () => {
               {/* row 1 */}
               <tr>
                 <td>Chất liệu</td>
-                <td>x</td>
+                <td className="text-center">x</td>
                 <td></td>
                 <td></td>
               </tr>
               {/* row 2 */}
               <tr>
                 <td>Kháng thấm</td>
-                <td>x</td>
-                <td></td>
+                <td className="text-center">x</td>
+                <td className="text-center">x</td>
                 <td></td>
               </tr>
               {/* row 3 */}
               <tr>
                 <td>Chống trày xước</td>
-                <td>x</td>
+                <td className="text-center">x</td>
                 <td></td>
                 <td></td>
               </tr>
@@ -316,12 +318,24 @@ const App = () => {
       {/* danh sách sp */}
       <section className="bg-gray-50 w-full py-24 flex flex-col items-center gap-y-4">
         <h2 className="text-2xl font-bold text-center">Danh sách sản phẩm</h2>
+        <p className="container mx-auto max-w-lg px-4 md:px-0">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe nulla
+          aperiam, deleniti tempora vel nesciunt a assumenda ab eius nihil nemo
+          consequuntur odit perferendis unde cum. Sit, repudiandae! Harum,
+          vitae?
+        </p>
         <img src={Products1.src} alt="Products 1" />
       </section>
 
       {/* danh sách bài viết */}
       <section className="bg-white w-full py-24 flex flex-col items-center gap-y-4">
-        <h2 className="text-2xl font-bold text-center">Danh sách bài viết</h2>
+        <h2 className="text-2xl font-bold">Danh sách bài viết</h2>
+        <p className="container mx-auto max-w-lg px-4 md:px-0">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe nulla
+          aperiam, deleniti tempora vel nesciunt a assumenda ab eius nihil nemo
+          consequuntur odit perferendis unde cum. Sit, repudiandae! Harum,
+          vitae?
+        </p>
         <div className="flex flex-col gap-y-4 px-4 md:px-0">
           <a className="link link-primary">
             Ưu Điểm Nổi Bật của Cửa Thép So Với Cửa Gỗ Truyền Thống
