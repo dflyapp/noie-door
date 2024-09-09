@@ -34,7 +34,7 @@ export default function BoxCanvas() {
     <Canvas
       style={{
         width: "100%",
-        height: "400px",
+        height: "300px",
       }}
     >
       <ambientLight intensity={Math.PI / 2} />

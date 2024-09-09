@@ -86,7 +86,17 @@ const App = () => {
     <>
       <div className="flex flex-wrap items-center my-8 w-full justify-center">
         <section className="w-full md:w-fit">
-          <div className="relative w-full md:w-[800px] h-[300px] md:h-[500px] overflow-hidden">
+          <div className="relative w-full md:w-[800px] h-[300px] md:h-[500px]">
+            <button
+              className="absolute -right-12 w-24 h-24 bg-red-100 rounded-full z-10"
+              style={{
+                top: "50%",
+                transform: "translateY(-50%)",
+              }}
+              onClick={() => swipeToImage(1)}
+            >
+              →
+            </button>
             <AnimatePresence initial={false} custom={direction}>
               <motion.div
                 key={imageCount}
@@ -110,7 +120,7 @@ const App = () => {
           </div>
         </section>
 
-        <section className="p-4">
+        <section className="p-4 ml-12">
           <h1 className="text-left text-4xl mt-2">
             {Model[activeImageIndex].name}
           </h1>
@@ -130,7 +140,11 @@ const App = () => {
               <div
                 key={image.id}
                 onClick={() => skipToImage(image.id - 1)}
-                className="relative h-[120px] w-[90px] cursor-pointer"
+                className={`relative h-[120px] w-[90px] cursor-pointer ${
+                  image.id === activeImageIndex + 1
+                    ? "border-4 border-primary"
+                    : null
+                }`}
                 style={{
                   backgroundColor: image.cover.src,
                 }}
@@ -200,33 +214,36 @@ const App = () => {
               {/* head */}
               <thead>
                 <tr>
-                  <th></th>
                   <th>Chi tiết</th>
                   <th>Tính năng</th>
-                  <th>Công dụng</th>
                 </tr>
               </thead>
               <tbody>
                 {/* row 1 */}
                 <tr>
-                  <th>1</th>
                   <td>Cy Ganderton</td>
                   <td>Quality Control Specialist</td>
-                  <td>Blue</td>
                 </tr>
                 {/* row 2 */}
                 <tr>
-                  <th>2</th>
                   <td>Hart Hagerty</td>
                   <td>Desktop Support Technician</td>
-                  <td>Purple</td>
                 </tr>
-                {/* row 3 */}
                 <tr>
-                  <th>3</th>
-                  <td>Brice Swyre</td>
-                  <td>Tax Accountant</td>
-                  <td>Red</td>
+                  <td>Hart Hagerty</td>
+                  <td>Desktop Support Technician</td>
+                </tr>
+                <tr>
+                  <td>Hart Hagerty</td>
+                  <td>Desktop Support Technician</td>
+                </tr>
+                <tr>
+                  <td>Hart Hagerty</td>
+                  <td>Desktop Support Technician</td>
+                </tr>
+                <tr>
+                  <td>Hart Hagerty</td>
+                  <td>Desktop Support Technician</td>
                 </tr>
               </tbody>
             </table>
