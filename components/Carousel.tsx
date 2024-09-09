@@ -7,6 +7,7 @@ import Image from "next/image";
 
 import Door1 from "@/assets/door1.webp";
 import Products1 from "@/assets/products1.png";
+import BoxCanvas from "./BoxCanvas";
 
 const Model = [
   {
@@ -83,9 +84,9 @@ const App = () => {
 
   return (
     <>
-      <div className="flex flex-wrap gap-8 items-center my-8 w-full justify-center">
-        <section>
-          <div className="relative w-[800px] h-[300px] md:h-[500px] overflow-hidden">
+      <div className="flex flex-wrap items-center my-8 w-full justify-center">
+        <section className="w-full md:w-fit">
+          <div className="relative w-full md:w-[800px] h-[300px] md:h-[500px] overflow-hidden">
             <AnimatePresence initial={false} custom={direction}>
               <motion.div
                 key={imageCount}
@@ -109,7 +110,7 @@ const App = () => {
           </div>
         </section>
 
-        <section>
+        <section className="p-4">
           <h1 className="text-left text-4xl mt-2">
             {Model[activeImageIndex].name}
           </h1>
@@ -147,7 +148,32 @@ const App = () => {
             ))}
           </div>
           <h1>Cover slider thumbnails</h1>
-          <button className="btn btn-primary mt-4">View 3D Render</button>
+          <button
+            className="btn btn-primary mt-4"
+            onClick={() => {
+              const modal = document?.getElementById(
+                "my_modal_1"
+              ) as HTMLDialogElement;
+              modal?.showModal();
+            }}
+          >
+            View 3D Render
+          </button>
+          <dialog id="my_modal_1" className="modal">
+            <div className="modal-box">
+              <h3 className="font-bold text-lg">View 3D Door Model!</h3>
+              <p className="py-4">
+                Press ESC key or click the button below to close
+              </p>
+              <BoxCanvas />
+              <div className="modal-action">
+                <form method="dialog">
+                  {/* if there is a button in form, it will close the modal */}
+                  <button className="btn">Close</button>
+                </form>
+              </div>
+            </div>
+          </dialog>
         </section>
       </div>
 
