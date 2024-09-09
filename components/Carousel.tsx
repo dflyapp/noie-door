@@ -275,40 +275,42 @@ const App = () => {
           obcaecati molestias numquam! Incidunt omnis ratione adipisci tenetur
           vero sequi blanditiis?
         </p>
-        <table className="table mt-12 overflow-x-auto ">
-          {/* head */}
-          <thead>
-            <tr>
-              <th>Tính năng</th>
-              <th>Cửa thép</th>
-              <th>Cửa nhựa compozit</th>
-              <th>Cửa nhôm xingfa</th>
-            </tr>
-          </thead>
-          <tbody>
-            {/* row 1 */}
-            <tr>
-              <td>Chất liệu</td>
-              <td>x</td>
-              <td></td>
-              <td></td>
-            </tr>
-            {/* row 2 */}
-            <tr>
-              <td>Kháng thấm</td>
-              <td>x</td>
-              <td></td>
-              <td></td>
-            </tr>
-            {/* row 3 */}
-            <tr>
-              <td>Chống trày xước</td>
-              <td>x</td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
+        <div className="overflow-x-auto">
+          <table className="table mt-12">
+            {/* head */}
+            <thead>
+              <tr>
+                <th>Tính năng</th>
+                <th>Cửa thép</th>
+                <th>Cửa nhựa compozit</th>
+                <th>Cửa nhôm xingfa</th>
+              </tr>
+            </thead>
+            <tbody>
+              {/* row 1 */}
+              <tr>
+                <td>Chất liệu</td>
+                <td>x</td>
+                <td></td>
+                <td></td>
+              </tr>
+              {/* row 2 */}
+              <tr>
+                <td>Kháng thấm</td>
+                <td>x</td>
+                <td></td>
+                <td></td>
+              </tr>
+              {/* row 3 */}
+              <tr>
+                <td>Chống trày xước</td>
+                <td>x</td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       {/* danh sách sp */}
