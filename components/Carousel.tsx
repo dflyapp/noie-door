@@ -326,39 +326,6 @@ const App = () => {
         </p>
         <img src={Products1.src} alt="Products 1" />
       </section>
-
-      {/* danh sách bài viết */}
-      <section className="bg-white w-full py-24 flex flex-col items-center gap-y-4">
-        <h2 className="text-2xl font-bold">Danh sách bài viết</h2>
-        <p className="container mx-auto max-w-lg px-4 md:px-0">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe nulla
-          aperiam, deleniti tempora vel nesciunt a assumenda ab eius nihil nemo
-          consequuntur odit perferendis unde cum. Sit, repudiandae! Harum,
-          vitae?
-        </p>
-        <div className="flex flex-col gap-y-4 px-4 md:px-0">
-          <a className="link link-primary">
-            Ưu Điểm Nổi Bật của Cửa Thép So Với Cửa Gỗ Truyền Thống
-          </a>
-          <a className="link link-primary">
-            Làm Thế Nào Để Chọn Cửa Thép Phù Hợp Cho Ngôi Nhà Của Bạn?
-          </a>
-          <a className="link link-primary">
-            Tại Sao Cửa Thép Là Lựa Chọn Hàng Đầu Cho An Ninh Gia Đình?
-          </a>
-          <a className="link link-primary">
-            Cách Bảo Dưỡng và Vệ Sinh Cửa Thép Để Luôn Bền Đẹp
-          </a>
-          <a className="link link-primary">
-            Xu Hướng Mới Nhất Trong Thiết Kế Cửa Thép Hiện Đại
-          </a>
-        </div>
-      </section>
-
-      {/* footer */}
-      <footer className="bg-gray-50 w-full py-24">
-        <p className="text-center">Copyright 2024 - NOIE Architecture</p>
-      </footer>
     </>
   );
 };

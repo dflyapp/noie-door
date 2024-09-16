@@ -19,8 +19,8 @@ body {
   background: var(--background);
 }
 
-p {
-  @apply font-[family-name:var(--font-geist-mono)];
+.blog-post p {
+  @apply my-4;
 }
 
 @layer utilities {
