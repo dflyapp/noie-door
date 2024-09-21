@@ -5,6 +5,12 @@ import LogoSlogan from "@/assets/logo-slogan.png";
 import Carousel from "@/components/Carousel";
 
 import { blogList } from "@/utils/blog-list";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Noie Door - Trang chủ",
+  description: "Sức mạnh của thép, giá trị của bền vững.",
+};
 
 export default async function Home() {
   return (

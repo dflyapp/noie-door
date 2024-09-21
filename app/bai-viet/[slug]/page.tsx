@@ -25,7 +25,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <main className="container max-w-lg mx-auto py-24 blog-post">
+      <main className="container px-2 md:px-0 max-w-lg mx-auto py-24 blog-post">
         <Link className="text-sm underline text-primary" href="/">
           Trang chủ
         </Link>
