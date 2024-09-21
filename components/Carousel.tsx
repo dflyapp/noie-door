@@ -9,26 +9,30 @@ import Door1 from "@/assets/door1.webp";
 import Products1 from "@/assets/products1.png";
 import BoxCanvas from "./BoxCanvas";
 
+import Cover1 from "@/assets/cover/cover1.jpg";
+import Cover2 from "@/assets/cover/cover2.jpg";
+import Cover3 from "@/assets/cover/cover3.jpg";
+
 const Model = [
   {
     id: 1,
     name: "An toàn sử dụng",
     cover: {
-      src: "red",
+      src: Cover1,
     },
   },
   {
     id: 2,
     name: "Bảo hành 2 năm",
     cover: {
-      src: "green",
+      src: Cover2,
     },
   },
   {
     id: 3,
     name: "Độ bền tuyệt đối",
     cover: {
-      src: "blue",
+      src: Cover3,
     },
   },
 ];
@@ -85,10 +89,11 @@ const App = () => {
   return (
     <>
       <div className="flex flex-wrap items-center my-8 w-full justify-center">
+        {/* <p>{`${Model[activeImageIndex].cover.src.src}`}</p> */}
         <section className="w-full md:w-fit pr-12 lg:pr-0">
           <div className="relative w-full md:w-[800px] h-[300px] md:h-[500px]">
             <button
-              className="absolute -right-12 w-24 h-24 bg-red-100 rounded-full z-10"
+              className="absolute -right-12 w-24 h-24 bg-gray-100 rounded-full z-10"
               style={{
                 top: "50%",
                 transform: "translateY(-50%)",
@@ -101,8 +106,8 @@ const App = () => {
               <motion.div
                 key={imageCount}
                 style={{
-                  // backgroundImage: `url(${Model[activeImageIndex].cover.src})`,
-                  backgroundColor: Model[activeImageIndex].cover.src,
+                  backgroundImage: `url(${Model[activeImageIndex].cover.src.src})`,
+                  // backgroundColor: Model[activeImageIndex].cover.src,
                 }}
                 custom={direction}
                 variants={sliderVariants}
@@ -124,8 +129,9 @@ const App = () => {
           <h1 className="text-left text-4xl mt-2">
             {Model[activeImageIndex].name}
           </h1>
+          <p className="my-2">Sức mạnh của thép, giá trị của bền vững.</p>
 
-          <div className="w-full justify-start flex gap-x-4 my-4">
+          {/* <div className="w-full justify-start flex gap-x-4 my-4">
             <button onClick={() => swipeToImage(-1)}>←</button>
             <Link
               className="hover:opacity-70 text-prbred underline"
@@ -134,7 +140,7 @@ const App = () => {
               xem dự án
             </Link>
             <button onClick={() => swipeToImage(1)}>→</button>
-          </div>
+          </div> */}
           <div className="flex justify-center gap-x-2">
             {Model.map((image) => (
               <div
@@ -145,22 +151,23 @@ const App = () => {
                     ? "border-4 border-primary"
                     : null
                 }`}
-                style={{
-                  backgroundColor: image.cover.src,
-                }}
+                // style={{
+                //   backgroundColor: image.cover.src,
+                // }}
               >
-                {/* <img
+                <img
                   className={`absolute top-0 left-0 h-12 md:h-full w-full object-cover ${
                     image.id === activeImageIndex + 1
                       ? "border-4 border-prbred"
                       : null
                   }`}
-                  src={image.cover.src}
+                  src={image.cover.src.src}
                   alt="Cover"
-                /> */}
+                />
               </div>
             ))}
           </div>
+
           <button
             className="btn btn-primary mt-4"
             onClick={() => {

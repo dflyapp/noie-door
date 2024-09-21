@@ -10,7 +10,7 @@ export default async function Home() {
   return (
     <>
       <header className="flex justify-center items-center">
-        <div className="p-2">
+        <div className="p-8 flex flex-col items-center">
           <Image
             src={LogoSlogan}
             alt="noie door logo"
@@ -18,6 +18,8 @@ export default async function Home() {
             height={100}
             priority
           />
+          <strong>NOIEDOOR</strong>
+          <span>Cửa thép bền vững</span>
         </div>
       </header>
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">

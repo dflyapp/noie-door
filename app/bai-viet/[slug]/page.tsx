@@ -2,6 +2,12 @@ import { Client } from "@notionhq/client";
 import { NotionRenderer } from "@notion-render/client";
 import { blogList } from "@/utils/blog-list";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Noie Door - Trang chủ",
+  description: "Sức mạnh của thép, giá trị của bền vững.",
+};
 
 const client = new Client({
   auth: process.env.NOTION_AUTH_KEY,
