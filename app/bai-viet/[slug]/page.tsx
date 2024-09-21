@@ -4,17 +4,26 @@ import { blogList } from "@/utils/blog-list";
 import Link from "next/link";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Noie Door - Trang chủ",
-  description: "Sức mạnh của thép, giá trị của bền vững.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const title = blogList.find((blog) => blog.slug === params.slug)?.title;
+  const description = blogList.find(
+    (blog) => blog.slug === params.slug
+  )?.description;
+  return {
+    title,
+    description,
+  };
+}
 
 const client = new Client({
   auth: process.env.NOTION_AUTH_KEY,
 });
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  console.log(params);
   const block_id = blogList.find((blog) => blog.slug === params.slug)?.id || "";
 
   const { results } = await client.blocks.children.list({
