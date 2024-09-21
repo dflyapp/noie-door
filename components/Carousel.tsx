@@ -131,7 +131,7 @@ const App = () => {
               className="hover:opacity-70 text-prbred underline"
               href={`/work/${activeImageIndex + 1}`}
             >
-              view project
+              xem dự án
             </Link>
             <button onClick={() => swipeToImage(1)}>→</button>
           </div>
@@ -161,7 +161,6 @@ const App = () => {
               </div>
             ))}
           </div>
-          <h1>Cover slider thumbnails</h1>
           <button
             className="btn btn-primary mt-4"
             onClick={() => {
@@ -177,20 +176,18 @@ const App = () => {
               }
             }}
           >
-            View 3D Render
+            Xem mô hình 3D
           </button>
           <dialog id="my_modal_1" className="modal">
             {isModalOpen && (
               <div className="modal-box">
-                <h3 className="font-bold text-lg">View 3D Door Model!</h3>
-                <p className="py-4">
-                  Press ESC key or click the button below to close
-                </p>
+                <h3 className="font-bold text-lg">Xem mô hình 3D của Cửa!</h3>
+                <p className="py-4">Nhấn ESC hoặc nút Đóng bên dưới để thoát</p>
                 <BoxCanvas />
                 <div className="modal-action">
                   <form method="dialog">
                     {/* if there is a button in form, it will close the modal */}
-                    <button className="btn">Close</button>
+                    <button className="btn">Đóng</button>
                   </form>
                 </div>
               </div>
@@ -242,16 +239,16 @@ const App = () => {
                   <td>Thép phủ sơn tĩnh điện</td>
                 </tr>
                 <tr>
-                  <td>Hart Hagerty</td>
-                  <td>Desktop Support Technician</td>
+                  <td>Lõi cửa</td>
+                  <td>Giấy tổ ong (honey comb paper)</td>
                 </tr>
                 <tr>
-                  <td>Hart Hagerty</td>
-                  <td>Desktop Support Technician</td>
+                  <td>Ron</td>
+                  <td>Cao su xung quanh chống ồn</td>
                 </tr>
                 <tr>
-                  <td>Hart Hagerty</td>
-                  <td>Desktop Support Technician</td>
+                  <td>Chống cháy</td>
+                  <td>Lên đến 90 phút (tùy dòng)</td>
                 </tr>
               </tbody>
             </table>
@@ -272,10 +269,12 @@ const App = () => {
           So sánh tổng thể các tính năng của từng loại cửa
         </h6>
         <p className="px-4 md:px-0">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, nihil
-          hic, cum ipsam deserunt laborum repellat harum debitis mollitia,
-          obcaecati molestias numquam! Incidunt omnis ratione adipisci tenetur
-          vero sequi blanditiis?
+          Chào mừng bạn đến với phần so sánh chi tiết cửa thép và các loại cửa
+          đối thủ! Nếu bạn đang băn khoăn không biết chọn loại cửa nào phù hợp
+          nhất cho ngôi nhà của mình, thì bạn đã đến đúng nơi rồi. Chúng tôi sẽ
+          cùng bạn khám phá những ưu và nhược điểm của từng loại cửa, từ độ bền,
+          tính an toàn cho đến tính thẩm mỹ và giá cả. Hãy cùng đi vào chi tiết
+          để tìm ra lựa chọn hoàn hảo nhất cho ngôi nhà của bạn!
         </p>
         <div className="overflow-x-auto">
           <table className="table mt-12">
@@ -318,13 +317,10 @@ const App = () => {
       {/* danh sách sp */}
       <section className="bg-gray-50 w-full py-24 flex flex-col items-center gap-y-4">
         <h2 className="text-2xl font-bold text-center">Danh sách sản phẩm</h2>
-        <p className="container mx-auto max-w-lg px-4 md:px-0">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe nulla
-          aperiam, deleniti tempora vel nesciunt a assumenda ab eius nihil nemo
-          consequuntur odit perferendis unde cum. Sit, repudiandae! Harum,
-          vitae?
+        <p className="container mx-auto max-w-lg px-4 md:px-0 text-center">
+          Coming Soon!
         </p>
-        <img src={Products1.src} alt="Products 1" />
+        {/* <img src={Products1.src} alt="Products 1" /> */}
       </section>
     </>
   );

@@ -30,5 +30,5 @@ body {
 }
 
 .btn {
-  @apply rounded-none font-[family-name:var(--font-geist-mono)];
+  @apply rounded-none;
 }

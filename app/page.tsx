@@ -4,19 +4,9 @@ import LogoSlogan from "@/assets/logo-slogan.png";
 // import Logo from "@/assets/logo.svg";
 import Carousel from "@/components/Carousel";
 
-import { Client } from "@notionhq/client";
 import { blogList } from "@/utils/blog-list";
 
-const client = new Client({
-  auth: process.env.NOTION_AUTH_KEY,
-});
-
 export default async function Home() {
-  const myPage = await client.databases.query({
-    database_id: process.env.NOTION_DATABASE_ID ?? "",
-  });
-  // console.log(myPage.results);
-
   return (
     <>
       <header className="flex justify-center items-center">
@@ -38,10 +28,12 @@ export default async function Home() {
       <section className="bg-white w-full py-24 flex flex-col items-center gap-y-4">
         <h2 className="text-2xl font-bold">Danh sách bài viết</h2>
         <p className="container mx-auto max-w-lg px-4 md:px-0">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe nulla
-          aperiam, deleniti tempora vel nesciunt a assumenda ab eius nihil nemo
-          consequuntur odit perferendis unde cum. Sit, repudiandae! Harum,
-          vitae?
+          Tại blog của chúng tôi, bạn sẽ tìm thấy đủ mọi loại bí kíp, từ cách
+          lắp đặt cửa thép một cách dễ dàng (không cần là thợ chuyên nghiệp!)
+          cho đến cách bảo trì để cửa luôn mới và hoạt động mượt mà. Bạn có biết
+          cách làm sạch cửa thép sao cho không bị gỉ sét không? Hay bạn muốn
+          biết cách chọn mua cửa thép chất lượng mà không bị “hớ”? Tất cả sẽ có
+          trong những bài viết sắp tới.
         </p>
         <div className="flex flex-col gap-y-4 px-4 md:px-0">
           {blogList.map((blog) => (
