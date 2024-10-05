@@ -7,12 +7,12 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   color: var(--foreground);
@@ -31,4 +31,22 @@ body {
 
 .btn {
   @apply rounded-none;
+}
+
+h1,
+h2,
+h3 {
+  @apply font-mono;
+}
+
+p,
+span,
+ul,
+ol,
+a,
+button,
+table,
+legend,
+b {
+  @apply font-sans;
 }

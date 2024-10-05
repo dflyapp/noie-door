@@ -24,8 +24,8 @@ export default async function Home() {
             height={100}
             priority
           />
-          <strong>NOIEDOOR</strong>
-          <span>Cửa thép bền vững</span>
+          <strong className="font-mono">NOIEDOOR</strong>
+          <span className="font-sans">Cửa thép bền vững</span>
         </div>
       </header>
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">

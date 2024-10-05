@@ -2,11 +2,9 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence, PanInfo } from "framer-motion";
-import Link from "next/link";
 import Image from "next/image";
 
 import Door1 from "@/assets/door1.webp";
-import Products1 from "@/assets/products1.png";
 import BoxCanvas from "./BoxCanvas";
 
 import Cover1 from "@/assets/cover/cover1.jpg";
@@ -88,8 +86,7 @@ const App = () => {
 
   return (
     <>
-      <div className="flex flex-wrap items-center my-8 w-full justify-center">
-        {/* <p>{`${Model[activeImageIndex].cover.src.src}`}</p> */}
+      <div className="flex flex-wrap items-center my-8 w-full justify-center overflow-hidden">
         <section className="w-full md:w-fit pr-12 lg:pr-0">
           <div className="relative w-full md:w-[800px] h-[300px] md:h-[500px]">
             <button
@@ -141,30 +138,21 @@ const App = () => {
             </Link>
             <button onClick={() => swipeToImage(1)}>→</button>
           </div> */}
-          <div className="flex justify-center gap-x-2">
-            {Model.map((image) => (
+          <div className="flex justify-start gap-x-2">
+            {Model.map((image, i) => (
               <div
                 key={image.id}
                 onClick={() => skipToImage(image.id - 1)}
-                className={`relative h-[120px] w-[90px] cursor-pointer ${
+                className={`relative h-[120px] w-[90px] cursor-pointer bg-center ${
                   image.id === activeImageIndex + 1
                     ? "border-4 border-primary"
                     : null
                 }`}
-                // style={{
-                //   backgroundColor: image.cover.src,
-                // }}
-              >
-                <img
-                  className={`absolute top-0 left-0 h-12 md:h-full w-full object-cover ${
-                    image.id === activeImageIndex + 1
-                      ? "border-4 border-prbred"
-                      : null
-                  }`}
-                  src={image.cover.src.src}
-                  alt="Cover"
-                />
-              </div>
+                style={{
+                  backgroundImage: `url(${Model[i].cover.src.src})`,
+                  // backgroundPosition: "cover"
+                }}
+              />
             ))}
           </div>
 
@@ -188,7 +176,7 @@ const App = () => {
           <dialog id="my_modal_1" className="modal">
             {isModalOpen && (
               <div className="modal-box">
-                <h3 className="font-bold text-lg">Xem mô hình 3D của Cửa!</h3>
+                <h3 className="font-bold text-lg">Xem mô hình 3D Cửa!</h3>
                 <p className="py-4">Nhấn ESC hoặc nút Đóng bên dưới để thoát</p>
                 <BoxCanvas />
                 <div className="modal-action">
@@ -211,13 +199,13 @@ const App = () => {
               <h2 className="text-2xl font-bold">
                 Thông tin sản phẩm cửa thép
               </h2>
-              <h6 className="mt-4">
+              <p className="mt-4">
                 Được chế tạo từ thép, một loại hợp kim gồm sắt và cacbon, cùng
                 với các thành phần khác để tăng cường độ bền và độ cứng. Cửa
                 thép được sử dụng rộng rãi trong các công trình xây dựng, từ nhà
                 ở, văn phòng, nhà máy đến các khu vực công cộng như trường học
                 và bệnh viện.
-              </h6>
+              </p>
             </div>
             <Image src={Door1} alt="Door 1" width={200} height={500} />
           </div>
